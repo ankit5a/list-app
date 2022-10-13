@@ -54,7 +54,7 @@ function App() {
       }
     };
     getAllData();
-  }, [getAllData]);
+  }, []);
 
   const handleAdd = async () => {
     try {
