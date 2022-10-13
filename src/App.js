@@ -55,7 +55,7 @@ function App() {
 
   React.useEffect(() => {
     getAllData();
-  }, [getAllData]);
+  }, []);
 
   const handleAdd = async () => {
     try {
