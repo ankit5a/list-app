@@ -1,0 +1,76 @@
+.App {
+    margin: 30px;
+}
+
+.card-container {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.card {
+    position: relative;
+    border-radius: 6px;
+    box-shadow: 0px 0px 8px 2px #d6d6d6;
+    padding: 20px;
+}
+
+.delete-btn {
+    position: absolute;
+    right: 20px;
+    width: 35px;
+    height: 35px;
+    padding: 0;
+    background: transparent;
+    border: 1px solid #000;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.add-btn-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.add-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background: #d9d9d9;
+    width: 200px;
+    height: 40px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+.description {
+    font-size: 14px;
+}
+
+.card-item-enter {
+    transform: translate3d(-300%, 0 , 0);
+}
+  
+.card-item-enter.card-item-enter-active {
+    transform: translate3d(0, 0 , 0);
+    transition: transform 200ms ease-in;
+}
+
+.card-item-exit.card-item-exit-active {
+    transform: translate3d(300%, 0 , 0);
+    transition: transform 200ms ease-in;
+}
+
+.toast-msg {
+    font-size: 14px;
+}
