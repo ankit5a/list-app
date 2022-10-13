@@ -31,31 +31,30 @@ function App() {
     });
   };
 
-  const getAllData = async () => {
-    try {
-      const { data } = await axios.get(
-        "https://6346ea2f04a6d457579c39e6.mockapi.io/cards"
-      );
-      setCardsData(data);
-      setAllDataLoading(false);
-    } catch (error) {
-      setAllDataLoading(false);
-      if (axios.isAxiosError(error)) {
-        if (error.response?.data) {
-          const { message } = error.response.data;
-          notify(message, "error");
-        } else {
-          notify(error.message, "error");
-        }
-      } else {
-        notify("Unknown Error", "error");
-      }
-    }
-  };
-
   React.useEffect(() => {
+    const getAllData = async () => {
+      try {
+        const { data } = await axios.get(
+          "https://6346ea2f04a6d457579c39e6.mockapi.io/cards"
+        );
+        setCardsData(data);
+        setAllDataLoading(false);
+      } catch (error) {
+        setAllDataLoading(false);
+        if (axios.isAxiosError(error)) {
+          if (error.response?.data) {
+            const { message } = error.response.data;
+            notify(message, "error");
+          } else {
+            notify(error.message, "error");
+          }
+        } else {
+          notify("Unknown Error", "error");
+        }
+      }
+    };
     getAllData();
-  }, []);
+  }, [getAllData]);
 
   const handleAdd = async () => {
     try {
